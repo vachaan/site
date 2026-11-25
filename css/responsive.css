@@ -1,0 +1,472 @@
+/* ==========================================================================
+   VACHAAN — Responsive Media Queries
+   Flawless mobile, tablet, and desktop viewing across all screen sizes
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Large Screen & Laptop Breakpoints (max-width: 1200px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .header-container {
+    padding-left: clamp(1.25rem, 2.5vw, 2.5rem);
+    padding-right: clamp(1.25rem, 2.5vw, 2.5rem);
+    gap: 1rem;
+  }
+
+  .header-nav {
+    gap: clamp(0.75rem, 1.5vw, 1.5rem);
+  }
+
+  .nav-list {
+    gap: clamp(0.65rem, 1vw, 1.15rem);
+  }
+
+  .nav-link {
+    font-size: 0.76rem;
+    letter-spacing: 0.05em;
+    padding: 0.4rem 0.2rem;
+  }
+
+  .header-cta .btn {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.78rem;
+  }
+
+  .footer-main-grid {
+    grid-template-columns: 1.4fr 1fr 1.1fr 1.5fr 1fr;
+    gap: 2rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Tablet & Medium Viewports (max-width: 1080px)
+   Eliminates navigation wrapping and jumbling completely
+   -------------------------------------------------------------------------- */
+@media (max-width: 1080px) {
+  /* Navigation: Show Hamburger Menu, Hide inline desktop links */
+  .header-nav {
+    display: none !important;
+  }
+
+  .menu-toggle {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-nav-drawer {
+    display: flex;
+  }
+
+  .section {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .footer-main-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  .footer-col:first-child {
+    grid-column: span 2;
+  }
+
+  .editorial-split,
+  .editorial-split-reversed {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+  }
+
+  .founder-photo-container {
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .service-full-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2.25rem;
+  }
+
+  .terms-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .terms-toc {
+    position: static;
+    max-height: none;
+    margin-bottom: 2rem;
+  }
+
+  .contact-layout-wide {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .policy-strip {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .faq-section-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .editorial-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .impact-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .reliability-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .leadership-grid,
+  .leadership-portfolios-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .pricing-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Breakpoints (max-width: 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 70px;
+    --header-height-scrolled: 64px;
+  }
+
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .header-container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .section {
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+  }
+
+  .section-header {
+    margin-bottom: 2.25rem;
+  }
+
+  .brand-logo-img {
+    height: 32px;
+  }
+
+  .brand-name {
+    font-size: 1.25rem;
+  }
+
+  .hero-home {
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+  }
+
+  .hero-logo-mark {
+    height: 44px;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-lead {
+    font-size: 1.05rem;
+    margin-bottom: 1.75rem;
+  }
+
+  /* Buttons on mobile: allow graceful text wrap and 100% max-width */
+  .btn {
+    white-space: normal;
+    text-align: center;
+    max-width: 100%;
+    word-break: break-word;
+    padding: 0.875rem 1.25rem;
+  }
+
+  .editorial-grid-2,
+  .editorial-grid-3 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .impact-metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .reliability-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .leadership-grid,
+  .leadership-portfolios-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .leadership-card-body {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .reliability-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .reliability-stat-title,
+  .reliability-stat-desc {
+    min-height: auto;
+  }
+
+  .impact-summary-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .impact-summary-motto {
+    border-left: none;
+    border-top: 2px solid var(--color-obsidian);
+    padding-left: 0;
+    padding-top: 0.75rem;
+    width: 100%;
+  }
+
+  .editorial-card {
+    padding: 2rem 1.5rem;
+  }
+
+  /* Table Horizontal Scrolling on Mobile */
+  .pricing-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--radius-sm);
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .pricing-table th,
+  .pricing-table td {
+    padding: 1rem 1.25rem;
+    font-size: 0.9375rem;
+    white-space: nowrap;
+  }
+
+  .pricing-table th:first-child,
+  .pricing-table td:first-child {
+    white-space: normal;
+    min-width: 160px;
+  }
+
+  /* Footer on Mobile */
+  .site-footer {
+    padding-top: 3.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .footer-main-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-col:first-child {
+    grid-column: span 1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .service-full-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .service-pricing-sidebar {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .contact-portal-box {
+    padding: clamp(1.5rem, 4vw, 2.25rem);
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .contact-form-embed {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .contact-form-embed iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 850px;
+  }
+
+  .contact-channels-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .faq-section-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .button-group .btn {
+    width: 100%;
+  }
+
+  .verse-deva-quote {
+    font-size: clamp(0.72rem, 3.2vw, 1.15rem);
+    max-width: 100%;
+  }
+
+  .live-since-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.5rem 1.25rem;
+    text-align: left;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Small Mobile Breakpoints (max-width: 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  :root {
+    --header-height: 64px;
+    --header-height-scrolled: 58px;
+  }
+
+  html {
+    font-size: 15px;
+  }
+
+  .container,
+  .header-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .brand-name {
+    font-size: 1.15rem;
+  }
+
+  .brand-logo-img {
+    height: 28px;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.8rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .section {
+    padding-top: 3.25rem;
+    padding-bottom: 3.25rem;
+  }
+
+  .section-header {
+    margin-bottom: 1.75rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.65rem, 6.5vw, 2rem);
+    word-break: break-word;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 7.5vw, 2.65rem);
+    word-break: break-word;
+  }
+
+  .verse-deva-quote {
+    font-size: clamp(0.58rem, 3vw, 0.75rem);
+    max-width: 100%;
+  }
+
+  .verse-container {
+    padding: 2.25rem 1rem;
+  }
+
+  .live-since-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .editorial-card {
+    padding: 1.5rem 1.15rem;
+  }
+
+  .service-full-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .service-pricing-sidebar {
+    padding: 1.25rem 1rem;
+  }
+
+  .contact-portal-box {
+    padding: 1.5rem 1rem;
+  }
+
+  .contact-form-embed iframe {
+    min-height: 850px;
+  }
+
+  .reliability-card {
+    padding: 1.75rem 1.15rem;
+  }
+
+  .leadership-card-body {
+    padding: 1.35rem 1rem;
+  }
+
+  .quote-block {
+    padding-left: 1.25rem;
+    border-left-width: 2px;
+  }
+
+  .quote-text {
+    font-size: 1.15rem;
+  }
+
+  .mobile-nav-link {
+    font-size: 1.25rem;
+  }
+
+  .back-to-top {
+    width: 100%;
+    justify-content: center;
+  }
+}

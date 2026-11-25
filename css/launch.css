@@ -1,0 +1,888 @@
+/* ==========================================================================
+   VACHAAN — Boutique Editorial Launch Countdown Stylesheet
+   Strict 5-Colour Solid Palette (White, Soft Ivory, Obsidian, Charcoal, Grey)
+   World-class boutique digital agency aesthetic
+   ========================================================================== */
+
+:root {
+  /* Strict 5-Colour Solid Palette */
+  --color-white: #FFFFFF;
+  --color-ivory: #F3F3F1;
+  --color-obsidian: #111111;
+  --color-charcoal: #292929;
+  --color-grey: #777777;
+
+  /* Architectural solid borders & accents */
+  --color-border-light: #E0E0DC;
+  --color-border-dark: #2E2E2E;
+  --color-border-highlight: #444444;
+
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --container-max: 1440px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--color-white);
+  color: var(--color-obsidian);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  background-color: var(--color-white);
+  color: var(--color-obsidian);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+/* --------------------------------------------------------------------------
+   Top Minimalist Launch Header
+   -------------------------------------------------------------------------- */
+.launch-header {
+  width: 100%;
+  background-color: var(--color-obsidian);
+  color: var(--color-white);
+  padding: 1.25rem clamp(1.5rem, 4vw, 3.5rem);
+  border-bottom: 1px solid var(--color-border-dark);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.launch-brand-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.95rem;
+  text-decoration: none;
+}
+
+.launch-brand-emblem {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+}
+
+.launch-brand-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.launch-brand-name {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-white);
+  line-height: 1;
+}
+
+.launch-brand-tagline {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #888888;
+  margin-top: 3px;
+}
+
+.launch-status-pill {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background-color: var(--color-charcoal);
+  color: #CCCCCC;
+  border: 1px solid var(--color-border-dark);
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  white-space: nowrap;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  display: inline-block;
+  animation: statusPulse 2s infinite ease-in-out;
+}
+
+@keyframes statusPulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.25;
+    transform: scale(0.8);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Launch Hero Section
+   -------------------------------------------------------------------------- */
+.launch-hero {
+  background-color: var(--color-obsidian);
+  color: var(--color-white);
+  padding: clamp(5rem, 8vw, 7.5rem) clamp(1.5rem, 4vw, 3.5rem);
+  border-bottom: 1px solid var(--color-border-dark);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.launch-hero-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-emblem-badge {
+  height: 64px;
+  width: auto;
+  margin-bottom: 2rem;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+}
+
+.hero-meta-badge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #AAAAAA;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--color-border-dark);
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--radius-xs);
+  background-color: #191919;
+}
+
+.launch-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.75rem, 6vw + 0.5rem, 5.25rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  margin-bottom: 1.75rem;
+  max-width: 980px;
+}
+
+.launch-hero-lead {
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  line-height: 1.65;
+  color: #D2D2D0;
+  max-width: 860px;
+  margin: 0 auto 3.5rem auto;
+  font-weight: 300;
+}
+
+/* --------------------------------------------------------------------------
+   Rectangular Architectural Countdown Grid
+   -------------------------------------------------------------------------- */
+.countdown-section {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1rem, 2vw, 1.75rem);
+}
+
+.countdown-box {
+  background-color: var(--color-charcoal);
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-md);
+  padding: clamp(2rem, 3.5vw, 3.25rem) 1rem clamp(1.75rem, 3vw, 2.5rem) 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.countdown-box:hover {
+  border-color: #555555;
+  transform: translateY(-2px);
+}
+
+.box-index {
+  position: absolute;
+  top: 0.85rem;
+  left: 1rem;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #666666;
+}
+
+.countdown-number {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 6vw, 5.25rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-white);
+  margin-bottom: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+.countdown-label {
+  font-family: var(--font-body);
+  font-size: clamp(0.75rem, 1vw, 0.875rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #AAAAAA;
+}
+
+/* Lively Seconds Box */
+.countdown-box-seconds {
+  border-color: #444444;
+  background-color: #2F2F2F;
+}
+
+.countdown-box-seconds .countdown-number {
+  color: #FFFFFF;
+}
+
+.countdown-box-seconds .status-indicator {
+  position: absolute;
+  top: 0.85rem;
+  right: 1rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  animation: tickPulse 1s infinite steps(2, start);
+}
+
+@keyframes tickPulse {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Official Launch Announcement Strip
+   -------------------------------------------------------------------------- */
+.launch-announcement-strip {
+  background-color: #1A1A1A;
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-md);
+  padding: 1.5rem clamp(1.75rem, 3vw, 3rem);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.25rem, 2.5vw, 3rem);
+  flex-wrap: wrap;
+  max-width: 960px;
+  width: 100%;
+}
+
+.announcement-prefix {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #888888;
+}
+
+.announcement-date-text {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: 0.04em;
+}
+
+.announcement-time-text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #CCCCCC;
+  border-left: 1px solid #333333;
+  padding-left: 1.5rem;
+  letter-spacing: 0.04em;
+}
+
+/* --------------------------------------------------------------------------
+   Live State Announcement Card (Auto Revealed upon Completion)
+   -------------------------------------------------------------------------- */
+.live-state-container {
+  display: none;
+  background-color: var(--color-charcoal);
+  border: 2px solid var(--color-white);
+  border-radius: var(--radius-md);
+  padding: clamp(3rem, 5vw, 4.5rem) clamp(2rem, 4vw, 3.5rem);
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto;
+  animation: liveCardFade 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes liveCardFade {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.live-badge {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #FFFFFF;
+  background-color: var(--color-obsidian);
+  border: 1px solid var(--color-white);
+  padding: 0.45rem 1.35rem;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.live-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  color: var(--color-white);
+  margin-bottom: 1rem;
+}
+
+.live-message {
+  font-size: 1.25rem;
+  color: #D2D2D0;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.btn-visit-website {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.15rem 2.5rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-white);
+  color: var(--color-obsidian);
+  border: 1px solid var(--color-white);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-visit-website:hover {
+  background-color: var(--color-ivory);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   Sanskrit Verse — Centerpiece of Brand Ethos
+   -------------------------------------------------------------------------- */
+.section-verse {
+  background-color: var(--color-ivory);
+  padding: clamp(5rem, 7vw, 7rem) clamp(1.5rem, 4vw, 3.5rem);
+  text-align: center;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.verse-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.verse-tagline-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-grey);
+  margin-bottom: 1.5rem;
+}
+
+.verse-deva-quote {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 2.5vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-obsidian);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+.verse-hairline-sep {
+  width: 90px;
+  height: 2px;
+  background-color: var(--color-obsidian);
+  margin: 1.75rem auto;
+}
+
+.verse-english-translation {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.75;
+  color: var(--color-charcoal);
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   Pillars of the Upcoming Launch (3 Columns)
+   -------------------------------------------------------------------------- */
+.section-pillars {
+  background-color: var(--color-white);
+  padding: clamp(4.5rem, 6vw, 6.5rem) clamp(1.5rem, 4vw, 3.5rem);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.pillars-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.pillars-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.pillar-card {
+  background-color: var(--color-ivory);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.25s ease;
+}
+
+.pillar-card:hover {
+  border-color: var(--color-obsidian);
+  background-color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.pillar-index {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-grey);
+  margin-bottom: 1rem;
+}
+
+.pillar-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-obsidian);
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+
+.pillar-desc {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--color-charcoal);
+  margin-bottom: 1.5rem;
+}
+
+.pillar-price-tag {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-obsidian);
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border-light);
+}
+
+/* --------------------------------------------------------------------------
+   About VACHAAN Narrative Section
+   -------------------------------------------------------------------------- */
+.section-narrative {
+  background-color: var(--color-ivory);
+  padding: clamp(5rem, 7vw, 7.5rem) clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.narrative-container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.narrative-header {
+  margin-bottom: 2.75rem;
+  text-align: center;
+}
+
+.narrative-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--color-grey);
+  margin-bottom: 0.75rem;
+  display: inline-block;
+}
+
+.narrative-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  color: var(--color-obsidian);
+  line-height: 1.2;
+}
+
+.narrative-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: clamp(2.5rem, 4vw, 4.5rem);
+}
+
+.narrative-card p {
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: var(--color-charcoal);
+  margin-bottom: 1.75rem;
+}
+
+.narrative-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Early Inquiries / Advance Touchpoints
+   -------------------------------------------------------------------------- */
+.section-inquiry {
+  background-color: var(--color-white);
+  padding: clamp(4.5rem, 6vw, 6.5rem) clamp(1.5rem, 4vw, 3.5rem);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.inquiry-card {
+  max-width: 1080px;
+  margin: 0 auto;
+  background-color: var(--color-obsidian);
+  color: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: clamp(2.5rem, 4vw, 4rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  border: 1px solid var(--color-border-dark);
+}
+
+.inquiry-content {
+  max-width: 620px;
+}
+
+.inquiry-tag {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #AAAAAA;
+  margin-bottom: 0.75rem;
+  display: inline-block;
+}
+
+.inquiry-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.85rem, 3.2vw, 2.5rem);
+  color: var(--color-white);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.inquiry-desc {
+  font-size: 1.05rem;
+  color: #CCCCCC;
+  line-height: 1.7;
+}
+
+.inquiry-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.btn-inquiry-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: var(--color-white);
+  color: var(--color-obsidian);
+  padding: 1.1rem 2.25rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  border: 1px solid var(--color-white);
+}
+
+.btn-inquiry-primary:hover {
+  background-color: var(--color-ivory);
+  transform: translateY(-2px);
+}
+
+.inquiry-email-direct {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #AAAAAA;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.inquiry-email-direct:hover {
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   Launch Footer
+   -------------------------------------------------------------------------- */
+.launch-footer {
+  background-color: var(--color-obsidian);
+  color: var(--color-white);
+  padding: 4.5rem clamp(1.5rem, 4vw, 3.5rem) 2.5rem clamp(1.5rem, 4vw, 3.5rem);
+  border-top: 1px solid var(--color-border-dark);
+  margin-top: auto;
+}
+
+.launch-footer-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.launch-footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--color-border-dark);
+}
+
+.footer-brand-title {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 0.35rem;
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  color: #CCCCCC;
+  margin-bottom: 1rem;
+}
+
+.footer-motto {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1rem;
+  color: #FFFFFF;
+  border-left: 2px solid var(--color-white);
+  padding-left: 0.75rem;
+}
+
+.footer-col-heading {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #888888;
+  margin-bottom: 1.25rem;
+}
+
+.footer-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.footer-link-item {
+  font-size: 0.95rem;
+  color: #CCCCCC;
+}
+
+.footer-link-item:hover {
+  color: var(--color-white);
+}
+
+.launch-footer-bottom {
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copyright {
+  font-size: 0.85rem;
+  color: #888888;
+}
+
+.footer-statement {
+  font-size: 0.85rem;
+  color: #AAAAAA;
+  font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Adaptations
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 860px) {
+  .verse-deva-quote {
+    font-size: clamp(0.78rem, 3.4vw, 1.25rem);
+  }
+
+  .inquiry-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .inquiry-actions {
+    width: 100%;
+  }
+
+  .btn-inquiry-primary {
+    width: 100%;
+  }
+
+  .countdown-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .launch-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+
+  .announcement-time-text {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .launch-announcement-strip {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .verse-deva-quote {
+    font-size: clamp(0.65rem, 3.5vw, 0.85rem);
+  }
+
+  .countdown-box {
+    padding: 1.75rem 0.75rem;
+  }
+
+  .countdown-number {
+    font-size: 2.75rem;
+  }
+
+  .launch-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .launch-header {
+    justify-content: flex-start;
+  }
+}

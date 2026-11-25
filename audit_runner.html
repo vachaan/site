@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Audit Runner</title>
+</head>
+<body>
+  <div id="results">PENDING</div>
+  <iframe id="f" src="about:blank" style="border:0;"></iframe>
+  <script>
+    const viewports = [[320, 568], [360, 640], [375, 812], [390, 844], [414, 896], [768, 1024], [1024, 768], [1280, 720], [1366, 768], [1440, 900], [1920, 1080]];
+    const pages = ["index.html", "about.html", "founders-desk.html", "services.html", "contact.html", "terms.html", "launch.html"];
+    const frame = document.getElementById('f');
+    const results = [];
+
+    async function sleep(ms) {
+      return new Promise(r => setTimeout(r, ms));
+    }
+
+    async function run() {
+      for (const page of pages) {
+        for (const [w, h] of viewports) {
+          frame.style.width = w + 'px';
+          frame.style.height = h + 'px';
+          frame.src = 'http://127.0.0.1:8913/' + page;
+          
+          await new Promise(r => { frame.onload = r; });
+          await sleep(50);
+
+          const doc = frame.contentDocument;
+          const win = frame.contentWindow;
+          if (!doc) continue;
+
+          const scrollW = Math.max(doc.documentElement.scrollWidth, doc.body.scrollWidth);
+          const clientW = Math.min(doc.documentElement.clientWidth, doc.body.clientWidth);
+          const diff = scrollW - clientW;
+
+          const overflowing = [];
+          if (diff > 1) {
+            const els = doc.querySelectorAll('*');
+            for (const el of els) {
+              if (el === doc.documentElement || el === doc.body) continue;
+              const r = el.getBoundingClientRect();
+              if (r.right > clientW + 1.5) {
+                const tag = el.tagName.toLowerCase();
+                const cls = el.className && typeof el.className === 'string' ? '.' + el.className.trim().split(/\s+/).join('.') : '';
+                const id = el.id ? '#' + el.id : '';
+                overflowing.push(tag + id + cls + ' (' + Math.round(r.right) + 'px > ' + clientW + 'px)');
+              }
+            }
+          }
+
+          let navIssue = null;
+          if (page !== 'launch.html') {
+            const toggle = doc.querySelector('.menu-toggle');
+            const nav = doc.querySelector('.header-nav');
+            if (w <= 1080) {
+              const toggleVis = toggle && win.getComputedStyle(toggle).display !== 'none';
+              const navHidden = nav && win.getComputedStyle(nav).display === 'none';
+              if (!toggleVis || !navHidden) {
+                navIssue = 'Mobile hamburger not active at ' + w + 'px';
+              }
+            } else {
+              const toggleHidden = !toggle || win.getComputedStyle(toggle).display === 'none';
+              const navVis = nav && win.getComputedStyle(nav).display !== 'none';
+              if (!toggleHidden || !navVis) {
+                navIssue = 'Desktop nav not active at ' + w + 'px';
+              }
+            }
+          }
+
+          results.push({
+            page,
+            w,
+            h,
+            diff: diff > 1 ? diff : 0,
+            overflowing: overflowing.slice(0, 4),
+            navIssue
+          });
+        }
+      }
+
+      document.getElementById('results').textContent = JSON.stringify(results);
+    }
+
+    window.addEventListener('load', run);
+  </script>
+</body>
+</html>
