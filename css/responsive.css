@@ -469,4 +469,9 @@
     width: 100%;
     justify-content: center;
   }
+
+  .card-footer {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
 }
