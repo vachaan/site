@@ -716,6 +716,122 @@ p:last-child {
   color: var(--color-white);
 }
 
+/* Special Offer Badges & Strikethrough Pricing Presentation */
+.special-offer-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.55rem;
+  background-color: var(--color-obsidian);
+  color: var(--color-white);
+  border-radius: var(--radius-xs);
+  line-height: 1.2;
+}
+
+.special-offer-badge-sm {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.15rem 0.45rem;
+  background-color: var(--color-obsidian);
+  color: var(--color-white);
+  border-radius: var(--radius-xs);
+  line-height: 1.2;
+  margin-bottom: 0.2rem;
+}
+
+.special-offer-badge-dark {
+  background-color: var(--color-white);
+  color: var(--color-obsidian);
+}
+
+.card-price-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  align-items: flex-start;
+}
+
+.card-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.card-price-original {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-grey);
+  text-decoration: line-through;
+}
+
+.service-offer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.service-pricing-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.service-pricing-original {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-grey);
+  text-decoration: line-through;
+}
+
+.pricing-price-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: flex-start;
+}
+
+.pricing-offer-tag {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.15rem 0.45rem;
+  background-color: var(--color-obsidian);
+  color: var(--color-white);
+  border-radius: var(--radius-xs);
+  line-height: 1.2;
+}
+
+.pricing-price-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pricing-original-price {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-grey);
+  text-decoration: line-through;
+}
+
 /* --------------------------------------------------------------------------
    8. Pricing Tables (Editorial Minimalist)
    -------------------------------------------------------------------------- */
